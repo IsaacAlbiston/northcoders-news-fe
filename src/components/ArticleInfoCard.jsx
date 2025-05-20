@@ -7,9 +7,7 @@ const ArticleInfoCard = ({article})=>{
     <p>{article.votes} Votes</p>
     <img src={article.article_img_url} alt={`Image about ${article.topic}`} />
     <Link to={`/articles/${article.article_id}`} >
-        <button>
-            View Article
-        </button>
+        View Article
     </Link>
     </>
 }
