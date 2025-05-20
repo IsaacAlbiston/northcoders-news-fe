@@ -5,10 +5,11 @@ import SearchResults from "../components/SearchResults"
 
 const ArticlesPage = ()=>{
     const [articlesInfo, setArticlesInfo] = useState([])
+    const [isLoading, setIsLoading] = useState(true)
     return <>
     <PageTitle title={ "Articles" } />
-    <SearchQueryFrom setArticlesInfo={setArticlesInfo} />
-    <SearchResults articlesInfo={articlesInfo} />
+    <SearchQueryFrom setArticlesInfo={setArticlesInfo} setIsLoading={setIsLoading} />
+    <SearchResults articlesInfo={articlesInfo} isLoading={isLoading} />
     </>
 }
 

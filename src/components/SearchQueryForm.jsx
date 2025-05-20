@@ -1,18 +1,20 @@
 import { useEffect, useState } from "react"
 import CustomDropdown from "../components/CustomDropdown"
 import AscendingCheckbox from "./AscendingCheckbox"
-import { getArticles } from "../utils/api"
+import { fetchArticles } from "../utils/api"
 
-const SearchQueryFrom = ({setArticlesInfo})=>{
+const SearchQueryFrom = ({setArticlesInfo, setIsLoading})=>{
     const [inputTopic, setInputTopic] = useState(null)
     const [inputSortBy, setInputSortBy] = useState(null)
+
     const topics = ["temp","stuff","placeholder"]
     const sortOptions = ["temp","stuff","placeholder"]
 
     useEffect(()=>{
-        getArticles()
+        fetchArticles()
         .then(articles=>{
             setArticlesInfo(articles)
+            setIsLoading(false)
         })
     },[])
 
