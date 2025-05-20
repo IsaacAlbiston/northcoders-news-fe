@@ -19,7 +19,7 @@ const ArticlePage = ()=>{
     return <>{isLoading?<h2>Loading...</h2>:
     <>
     <PageTitle title={articleInfo.title} />
-    <FullArticleInfo articleInfo={articleInfo} />
+    <FullArticleInfo articleInfo={articleInfo} articleId={articleId} />
     </>}
     <CommentsList articleId={articleId} />
     </>

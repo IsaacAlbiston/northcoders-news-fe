@@ -10,3 +10,13 @@
   display:flex;
   justify-content: space-evenly;
 }
+
+.PositiveVoteButton{
+  width: 5rem;
+  background-color: lightgreen;
+}
+
+.NegativeVoteButton{
+  width: 5rem;
+  background-color: lightcoral;
+}
