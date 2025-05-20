@@ -16,9 +16,9 @@ const CommentsList = ({articleId})=>{
     },[])
 
     return <>
-    <h2>Comments</h2>
     {isLoading? <h2>Loading...</h2>:
     <>
+    <h2>{commentsInfo.length} comments</h2>
     <PageIndex/>
     <ol>
         {commentsInfo.map(comment=>{

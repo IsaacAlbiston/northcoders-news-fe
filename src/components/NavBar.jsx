@@ -1,28 +1,20 @@
 import { Link } from "react-router";
 
 const NavBar = ()=>{
-    return <>
+    return <div className="NavBar">
         <Link to="/"> 
-            <button>
-                Home
-            </button>
+            Home
         </Link>
         <Link to="/articles">
-            <button>
-                Articles
-            </button>
+            Articles
         </Link>
         <Link to="/users">
-            <button>
-                Users
-            </button>
+            Users
         </Link>
         <Link to="/users/username">
-            <button>
-                Account
-            </button>
+            Account
         </Link>
-    </>
+    </div>
 }
 
 export default NavBar
