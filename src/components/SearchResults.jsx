@@ -3,7 +3,7 @@ import PageIndex from "./PageIndex"
 
 const SearchResults = ({articlesInfo, isLoading})=>{
     return <>
-    {isLoading? <h1>Loading...</h1>:
+    {isLoading? <h2>Loading...</h2>:
     <>
     <PageIndex/>
     <ol>

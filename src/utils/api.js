@@ -17,3 +17,10 @@ export const fetchArticleById = (articleId)=>{
         return res.data.article
     })
 }
+
+export const fetchCommentsByArticleId = (articleId)=>{
+    return ncNewsApi.get(`/articles/${articleId}/comments`, {params:{limit:1000}})
+    .then(res=>{
+        return res.data.comments
+    })
+}

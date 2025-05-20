@@ -3,6 +3,7 @@ import { useParams } from "react-router"
 import { fetchArticleById } from "../utils/api"
 import PageTitle from "../components/PageTitle"
 import FullArticleInfo from "../components/FullArticleInfo"
+import CommentsList from "../components/CommentsList"
 
 const ArticlePage = ()=>{
     const [articleInfo, setArticleInfo] = useState({})
@@ -20,6 +21,7 @@ const ArticlePage = ()=>{
     <PageTitle title={articleInfo.title} />
     <FullArticleInfo articleInfo={articleInfo} />
     </>}
+    <CommentsList articleId={articleId} />
     </>
 }
 
