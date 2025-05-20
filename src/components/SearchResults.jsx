@@ -1,8 +1,10 @@
 import ArticleInfoCard from "./ArticleInfoCard"
 import PageIndex from "./PageIndex"
 
-const SearchResults = ({articlesInfo})=>{
+const SearchResults = ({articlesInfo, isLoading})=>{
     return <>
+    {isLoading? <h1>Loading...</h1>:
+    <>
     <PageIndex/>
     <ol>
         {articlesInfo.map(article=>{
@@ -11,6 +13,7 @@ const SearchResults = ({articlesInfo})=>{
             </li>
         })}
     </ol>
+    </>}
     </>
 }
 
