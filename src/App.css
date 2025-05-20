@@ -5,6 +5,12 @@
   text-align: center;
 }
 
+ol{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
 .NavBar{
   width: 90%;
   display:flex;
@@ -19,4 +25,21 @@
 .NegativeVoteButton{
   width: 5rem;
   background-color: lightcoral;
+}
+
+.listItem{
+  border-radius: 4%;
+  background-color: rgb(232, 232, 232);
+  margin: 10px;
+  padding: 30px;
+  width: 90%;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 1fr;
+  row-gap: 5px;
+  column-gap: 50px;
+}
+
+.articleImage{
+  width: 70%;
 }

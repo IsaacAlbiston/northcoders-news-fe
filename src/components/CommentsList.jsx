@@ -22,7 +22,7 @@ const CommentsList = ({articleId})=>{
     <PageIndex/>
     <ol>
         {commentsInfo.map(comment=>{
-            return <li key={comment.comment_id} >
+            return <li key={comment.comment_id} className="listItem" >
                 <CommentInfoCard comment={comment} />
             </li>
         })}
