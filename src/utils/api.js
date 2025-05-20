@@ -24,3 +24,7 @@ export const fetchCommentsByArticleId = (articleId)=>{
         return res.data.comments
     })
 }
+
+export const incVotesOnArticle = (articleId, incValue)=>{
+    return ncNewsApi.patch(`/articles/${articleId}`, {inc_votes:incValue})
+}
