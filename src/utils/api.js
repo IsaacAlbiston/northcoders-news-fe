@@ -4,8 +4,16 @@ const ncNewsApi = axios.create({
     baseURL: "https://isaacalbiston-northcoders-news-be.onrender.com/api",
   });
 
-export const fetchArticles = ()=>{
-    return ncNewsApi.get("/articles", {params:{limit:1000}})
+export const fetchTopics = ()=>{
+    return ncNewsApi.get("/topics")
+    .then(res=>{
+        return res.data.topics
+    })
+}
+
+
+export const fetchArticles = ({topic})=>{
+    return ncNewsApi.get("/articles", {params:{topic:topic,limit:1000}})
     .then(res=>{
         return res.data.articles
     })

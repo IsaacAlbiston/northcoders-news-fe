@@ -3,10 +3,13 @@ const CustomDropdown = ({selectedOption, setSelectedOption, optionsArr})=>{
         setSelectedOption(event.target.value)
     }
 
-    return <select onChange={updateDropdown}>
-        {optionsArr.map(singleOption=>{
-            return <option value={selectedOption}>{singleOption}</option>
+    return <select value={selectedOption} onChange={updateDropdown}>
+        <option value={null}>{"All"}</option>
+        <>
+        {optionsArr.map(option=>{
+            return <option value={option}>{option}</option>
         })}
+        </>
     </select>
 }
 
