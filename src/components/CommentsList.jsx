@@ -3,7 +3,7 @@ import CommentInfoCard from "./CommentInfoCard"
 import PageIndex from "./PageIndex"
 import { fetchCommentsByArticleId } from "../utils/api"
 
-const CommentsList = ({articleId})=>{
+const CommentsList = ({articleId, additionToComments})=>{
     const [isLoading, setIsLoading] = useState(true)
     const [commentsInfo, setCommentsInfo] = useState([])
 
@@ -13,7 +13,7 @@ const CommentsList = ({articleId})=>{
             setCommentsInfo(comments)
             setIsLoading(false)
         })
-    },[])
+    },[additionToComments])
 
     return <>
     {isLoading? <h2>Loading...</h2>:
