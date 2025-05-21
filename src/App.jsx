@@ -4,17 +4,20 @@ import { Route, Routes } from 'react-router'
 import ArticlesPage from './pages/ArticlesPage'
 import NavBar from './components/NavBar'
 import ArticlePage from './pages/ArticlePage'
+import { SessionProvider } from './contexts/SessionContext'
 
 function App() {
 
   return (
-    <>
-    <NavBar/>
-    <Routes>
-      <Route path='/articles' element= {<ArticlesPage/>} />
-      <Route path='/articles/:articleId' element= {<ArticlePage/>} />
-    </Routes>
-    </>
+    <div id='AppContainer'>
+    <SessionProvider>
+      <NavBar/>
+      <Routes>
+        <Route path='/articles' element= {<ArticlesPage/>} />
+        <Route path='/articles/:articleId' element= {<ArticlePage/>} />
+      </Routes>
+    </SessionProvider>
+    </div>
   )
 }
 
