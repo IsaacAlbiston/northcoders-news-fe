@@ -8,21 +8,22 @@ import { useParams } from "react-router"
 const ArticlesPage = ()=>{
     const [articlesInfo, setArticlesInfo] = useState([])
     const [isLoading, setIsLoading] = useState(true)
+    const [sortBy, setSortBy] = useState("votes")
     const {topic} = useParams()
     console.log(topic)
 
     useEffect(()=>{
         setIsLoading(true)
-        fetchArticles({topic})
+        fetchArticles({topic: topic, sort_by: sortBy})
         .then(articles=>{
             setArticlesInfo(articles)
             setIsLoading(false)
         })
-    },[topic])
+    },[topic, sortBy])
 
     return <>
     <PageTitle title={ "Articles" } />
-    <SearchQueryFrom/>
+    <SearchQueryFrom setSortBy={setSortBy} />
     <SearchResults articlesInfo={articlesInfo} isLoading={isLoading} />
     </>
 }

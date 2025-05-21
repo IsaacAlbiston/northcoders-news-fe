@@ -14,7 +14,7 @@ function App() {
       <NavBar/>
       <Routes>
         <Route path='/articles/:topic?' element= {<ArticlesPage/>} />
-        <Route path='/articles/:articleId' element= {<ArticlePage/>} />
+        <Route path='/article/:articleId' element= {<ArticlePage/>} />
       </Routes>
     </SessionProvider>
     </div>
