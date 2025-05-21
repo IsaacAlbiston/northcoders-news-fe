@@ -12,12 +12,12 @@ const TopicsButtons = ()=>{
         })
     },[])
 
-    return <>
+    return <div className="NavBar">
         <Link to='/articles'>All</Link>
         {topics.map(topic=>{
             return <Link to={`/articles/${topic.slug}`}>{topic.slug}</Link>
         })}
-    </>
+    </div>
 }
 
 export default TopicsButtons

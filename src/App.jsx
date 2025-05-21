@@ -9,7 +9,7 @@ import { SessionProvider } from './contexts/SessionContext'
 function App() {
 
   return (
-    <div id='AppContainer'>
+    <div className='loading'>
     <SessionProvider>
       <NavBar/>
       <Routes>
