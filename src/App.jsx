@@ -9,12 +9,12 @@ import { SessionProvider } from './contexts/SessionContext'
 function App() {
 
   return (
-    <div id='AppContainer'>
+    <div className='loading'>
     <SessionProvider>
       <NavBar/>
       <Routes>
         <Route path='/articles/:topic?' element= {<ArticlesPage/>} />
-        <Route path='/articles/:articleId' element= {<ArticlePage/>} />
+        <Route path='/article/:articleId' element= {<ArticlePage/>} />
       </Routes>
     </SessionProvider>
     </div>

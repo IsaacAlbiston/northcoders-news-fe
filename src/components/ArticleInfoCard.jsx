@@ -4,7 +4,7 @@ const ArticleInfoCard = ({article})=>{
     return <>
     <h2>{article.title}</h2>
     <p>By {article.author}</p>
-    <Link to={`/articles/${article.article_id}`} >
+    <Link to={`/article/${article.article_id}`} >
         View Article
     </Link>
     <p>{article.votes} Votes</p>

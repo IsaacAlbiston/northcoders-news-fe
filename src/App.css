@@ -1,10 +1,9 @@
 #root {
   color-scheme: light dark;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  padding: 3%;
   text-align: center;
   color: light-dark(rgb(0 0 0), rgb(255 255 255));
+  width: 100%;
 }
 
 ol{
@@ -15,8 +14,8 @@ ol{
 
 .NavBar{
   padding: 10px;
-  display:flex;
-  justify-content: space-evenly;
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   border-bottom: solid light-dark(rgb(0 0 0), rgb(255 255 255)) 1px;
 }
 

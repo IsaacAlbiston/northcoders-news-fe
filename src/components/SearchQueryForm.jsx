@@ -1,16 +1,29 @@
 import { useEffect, useState } from "react"
-import CustomDropdown from "../components/CustomDropdown"
+import SortByDropdown from "./SortByDropdown"
 import AscendingCheckbox from "./AscendingCheckbox"
 import TopicsButtons from "./TopicsButtons"
 
-const SearchQueryFrom = ()=>{
+const SearchQueryFrom = ({setArticleSort})=>{
+    const [inputAscCheckbox, setInputAscCheckbox] = useState(false)
     const [inputSortBy, setInputSortBy] = useState(null)
-    const sortOptions = ["temp","stuff","placeholder"]
+    // console.log(inputAscCheckbox)
 
-    return <form className="NavBar">
+    useEffect(()=>{
+        setArticleSort(current=>{
+            const copySortObj = {...current}
+            copySortObj.sort_by = inputSortBy
+            if (inputAscCheckbox) copySortObj.order = "ASC"
+            else copySortObj.order = "DESC"
+            return copySortObj
+        })
+    },[inputSortBy, inputAscCheckbox])
+    
+    return <form>
         <TopicsButtons/>
-        <CustomDropdown selectedOption={ inputSortBy } setSelectedOption={ setInputSortBy } optionsArr={ sortOptions } />
-        <AscendingCheckbox/>
+        <div className="NavBar">
+            <SortByDropdown inputSortBy={ inputSortBy } setInputSortBy={ setInputSortBy } />
+            <AscendingCheckbox inputAscCheckbox={ inputAscCheckbox } setInputAscCheckbox={ setInputAscCheckbox } />
+        </div>
     </form>
 }
 
