@@ -29,11 +29,37 @@ const ArticleVotes = ({articleId, votes})=>{
         }
     },[voteInput])
 
+    const cancelVote = ()=>{
+        if(voteInput===1){
+            setVoted(false)
+            incVotesOnArticle(articleId,-1)
+            .then(()=>{
+                setVoteInput(0)
+            })
+            .catch(err=>{
+                setVoted(true)
+                setError(true)
+            })
+        } else if (voteInput===-1){
+            setVoted(false)
+            incVotesOnArticle(articleId,1)
+            .then(()=>{
+                setVoteInput(0)
+            })
+            .catch(err=>{
+                setVoted(true)
+                setError(true)
+            })
+        }
+    }
+
     return <>
     <p>{votes+voteInput} Votes</p>
-    {error?<p>Voting Unsuccessful Please Retry</p>:<></>}
-    {voted?
+    {error?<p>Action Unsuccessful Please Retry</p>:<></>}
+    {voted?<>
     <p>{voteInput} Vote Accepted</p>
+    <button onClick={cancelVote}>Cancel Vote</button>
+    </>
     :<>
     <PositiveVoteButton setVoteInput={setVoteInput} />
     <NegativeVoteButton setVoteInput={setVoteInput} />
