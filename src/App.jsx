@@ -13,7 +13,7 @@ function App() {
     <SessionProvider>
       <NavBar/>
       <Routes>
-        <Route path='/articles' element= {<ArticlesPage/>} />
+        <Route path='/articles/:topic?' element= {<ArticlesPage/>} />
         <Route path='/articles/:articleId' element= {<ArticlePage/>} />
       </Routes>
     </SessionProvider>

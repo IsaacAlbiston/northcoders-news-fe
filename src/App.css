@@ -14,9 +14,10 @@ ol{
 }
 
 .NavBar{
-  width: 90%;
+  padding: 10px;
   display:flex;
   justify-content: space-evenly;
+  border-bottom: solid light-dark(rgb(0 0 0), rgb(255 255 255)) 1px;
 }
 
 .PositiveVoteButton{
@@ -44,8 +45,4 @@ ol{
 
 .articleImage{
   width: 70%;
-}
-
-#AppContainer{
-  width: 100%;
 }
