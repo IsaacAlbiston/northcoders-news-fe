@@ -32,3 +32,7 @@ export const incVotesOnArticle = (articleId, incValue)=>{
 export const postCommentOnArticle = (articleId, comment)=>{
     return ncNewsApi.post(`/articles/${articleId}/comments`,comment)
 }
+
+export const removeCommentById = (commentId)=>{
+    return ncNewsApi.delete(`/comments/${commentId}`)
+}
