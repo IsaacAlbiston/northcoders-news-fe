@@ -5,8 +5,7 @@ import TopicsButtons from "./TopicsButtons"
 
 const SearchQueryFrom = ({setArticleSort})=>{
     const [inputAscCheckbox, setInputAscCheckbox] = useState(false)
-    const [inputSortBy, setInputSortBy] = useState(null)
-    // console.log(inputAscCheckbox)
+    const [inputSortBy, setInputSortBy] = useState("votes")
 
     useEffect(()=>{
         setArticleSort(current=>{

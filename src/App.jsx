@@ -5,6 +5,8 @@ import ArticlesPage from './pages/ArticlesPage'
 import NavBar from './components/NavBar'
 import ArticlePage from './pages/ArticlePage'
 import { SessionProvider } from './contexts/SessionContext'
+import BadPathPage from './pages/BadPathPage'
+import HomePage from './pages/HomePage'
 
 function App() {
 
@@ -13,8 +15,10 @@ function App() {
     <SessionProvider>
       <NavBar/>
       <Routes>
+        <Route path='/' element={<HomePage/>} />
         <Route path='/articles/:topic?' element= {<ArticlesPage/>} />
         <Route path='/article/:articleId' element= {<ArticlePage/>} />
+        <Route path={'*'} element= {<BadPathPage/>} />
       </Routes>
     </SessionProvider>
     </div>

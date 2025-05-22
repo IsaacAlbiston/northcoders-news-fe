@@ -13,7 +13,7 @@ export const fetchTopics = ()=>{
 
 
 export const fetchArticles = (givenParams)=>{
-    return ncNewsApi.get("/articles", {params:{limit:1000, ...givenParams}})
+    return ncNewsApi.get("/articles", {params:{...givenParams}})
     .then(res=>{
         return res.data.articles
     })
