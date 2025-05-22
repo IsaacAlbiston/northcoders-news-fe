@@ -11,6 +11,13 @@ export const fetchUsers = ()=>{
     })
 }
 
+export const fetchUserByUsername = (username)=>{
+    return ncNewsApi.get(`/users/${username}`)
+    .then(res=>{
+        return res.data.user
+    })
+}
+
 export const fetchTopics = ()=>{
     return ncNewsApi.get("/topics")
     .then(res=>{

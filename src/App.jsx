@@ -8,6 +8,7 @@ import { SessionProvider } from './contexts/SessionContext'
 import BadPathPage from './pages/BadPathPage'
 import HomePage from './pages/HomePage'
 import UsersPage from './pages/UsersPage'
+import AccountPage from './pages/AccountPage'
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
         <Route path='/articles/:topic?' element= {<ArticlesPage/>} />
         <Route path='/article/:articleId' element= {<ArticlePage/>} />
         <Route path='/users' element={<UsersPage/>} />
+        <Route path='/users/:usernameParam' element={<AccountPage/>} />
         <Route path={'*'} element= {<BadPathPage/>} />
       </Routes>
     </SessionProvider>
