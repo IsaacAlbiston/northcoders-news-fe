@@ -5,8 +5,8 @@ const AscendingCheckbox = ({inputAscCheckbox, setInputAscCheckbox})=>{
     }
 
     return <div>
-         <label htmlFor="AscendingCheckbox">Sort Ascending:</label>
-        <input type="checkbox" value={inputAscCheckbox} onChange={updateCheckbox}/>
+        <label htmlFor="AscendingCheckbox">Sort Ascending:</label>
+        <input id="AscendingCheckbox" type="checkbox" value={inputAscCheckbox} onChange={updateCheckbox}/>
     </div>
 }
 

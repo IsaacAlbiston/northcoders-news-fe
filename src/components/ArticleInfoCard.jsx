@@ -7,10 +7,10 @@ const ArticleInfoCard = ({article})=>{
     <p>{article.votes} Votes</p>
     <div className="ArticleLinks" >
         <Link to={`/article/${article.article_id}`} >
-            View Article
+            <p className="link">View Article</p>
         </Link>
         <Link to={`/articles/${article.topic}`} >
-            View Topic
+            <p className="link">View Topic</p>
         </Link>
     </div>
     <img src={article.article_img_url} alt={`Image about ${article.topic}`} className="articleImage"/>

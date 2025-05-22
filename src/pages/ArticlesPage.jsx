@@ -7,8 +7,6 @@ import { useParams } from "react-router"
 import UseLoadingHook from "../hooks/UseLoadingHook"
 
 const ArticlesPage = ()=>{
-    // const [articlesInfo, setArticlesInfo] = useState([])
-    // const [isLoading, setIsLoading] = useState(true)
     const [articleSort, setArticleSort] = useState({sort_by:"votes"})
     const [articlesSearchTerm, setArticlesSearchTerm] = useState({})
     const {topic} = useParams()
@@ -21,7 +19,7 @@ const ArticlesPage = ()=>{
 
     return <>
     <PageTitle title={ "Articles" } />
-    <SearchQueryFrom setArticleSort={setArticleSort} />
+    <SearchQueryFrom setArticleSort={setArticleSort} topic={topic} />
     {error?<PageTitle title={ "Topic Not Found" } />:
     <>
     {isLoading? <h2>Loading...</h2>:

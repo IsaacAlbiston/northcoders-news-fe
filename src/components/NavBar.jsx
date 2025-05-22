@@ -1,18 +1,21 @@
+import { useContext } from "react";
 import { Link } from "react-router";
+import { SessionContext } from "../contexts/SessionContext"
 
 const NavBar = ()=>{
+    const {username} = useContext(SessionContext)
     return <div className="NavBar">
-        <Link to="/"> 
-            Home
+        <Link to="/">
+            <p className="link">Home</p>
         </Link>
         <Link to="/articles">
-            Articles
+            <p className="link">Articles</p>
         </Link>
         <Link to="/users">
-            Users
+            <p className="link">Users</p>
         </Link>
-        <Link to="/users/username">
-            Account
+        <Link to={`/users/${username}`}>
+            <p className="link">Account</p>
         </Link>
     </div>
 }

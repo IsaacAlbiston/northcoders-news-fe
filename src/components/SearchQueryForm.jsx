@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react"
 import SortByDropdown from "./SortByDropdown"
 import AscendingCheckbox from "./AscendingCheckbox"
-import TopicsButtons from "./TopicsButtons"
+import TopicLinks from "./TopicLinks"
 
-const SearchQueryFrom = ({setArticleSort})=>{
+const SearchQueryFrom = ({setArticleSort, topic})=>{
     const [inputAscCheckbox, setInputAscCheckbox] = useState(false)
     const [inputSortBy, setInputSortBy] = useState("votes")
 
@@ -18,7 +18,7 @@ const SearchQueryFrom = ({setArticleSort})=>{
     },[inputSortBy, inputAscCheckbox])
     
     return <form>
-        <TopicsButtons/>
+        <TopicLinks topic={topic} />
         <div className="NavBar">
             <SortByDropdown inputSortBy={ inputSortBy } setInputSortBy={ setInputSortBy } />
             <AscendingCheckbox inputAscCheckbox={ inputAscCheckbox } setInputAscCheckbox={ setInputAscCheckbox } />
