@@ -4,8 +4,8 @@ const CommentInput = ({inputComment, setInputComment})=>{
     }
 
     return <>
-    <label htmlFor="comment input"></label>
-    <input name="comment input" type="text" onChange={updateInputComment} value={inputComment}/>
+    <label htmlFor="CommentInput">New Comment</label>
+    <textarea className="CommentInput" onChange={updateInputComment} value={inputComment}/>
     </>
 }
 

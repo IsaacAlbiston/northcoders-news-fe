@@ -29,12 +29,13 @@ const NewCommentForm = ({setCreateComment, articleId, setAdditionToComments})=>{
         }
     },[commentToPost])
 
-    return <form>
-        create a comment
+    return <form className="listItem">
         <CommentInput inputComment={inputComment} setInputComment={setInputComment} />
         {error?<p>Post Unsuccessful Please Retry</p>:<></>}
+        <div>
         {isLoading?<p>Posting...</p>:<SetStateButton setState={setCommentToPost} valueToSet={inputComment} buttonText={"Post"}/>}
         <SetStateButton setState={setCreateComment} valueToSet={false} buttonText={"Cancel"}/>
+        </div>
     </form>
 }
 

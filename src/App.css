@@ -12,6 +12,10 @@ ol{
   padding: 0;
 }
 
+button{
+  margin: 10px;
+}
+
 .NavBar{
   padding: 10px;
   display:grid;
@@ -49,6 +53,24 @@ ol{
   row-gap: 5px;
 }
 
+.UserCard{
+  width: 90%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
 .articleImage{
-  width: 70%;
+  width: 80%;
+}
+
+.CommentInput{
+  width: 80%;
+  max-width: 80%;
+  height: 3rem;
+}
+
+.link{
+  text-decoration: underline;
+  color: light-dark(rgb(0, 0, 190), lightblue);
 }

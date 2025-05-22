@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-const UseLoadingHook = (dataFetchFunction, searchTerm)=>{
+const UseLoadingHook = (dataFetchFunction, searchTerm, refreshTerm)=>{
     const [data, setData] = useState(null)
     const [isLoading, setIsLoading] = useState(true)
     const [error, setError] = useState(null)
@@ -17,7 +17,7 @@ const UseLoadingHook = (dataFetchFunction, searchTerm)=>{
             setIsLoading(false)
             setError(err)
         })
-    },[searchTerm])
+    },[searchTerm, refreshTerm])
 
     return { data, isLoading, error}
 }

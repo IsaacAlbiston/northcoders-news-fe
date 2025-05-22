@@ -2,20 +2,14 @@ import { useEffect, useState } from "react"
 import CommentInfoCard from "./CommentInfoCard"
 import PageIndex from "./PageIndex"
 import { fetchCommentsByArticleId } from "../utils/api"
+import UseLoadingHook from "../hooks/UseLoadingHook"
 
 const CommentsList = ({articleId, additionToComments})=>{
-    const [isLoading, setIsLoading] = useState(true)
-    const [commentsInfo, setCommentsInfo] = useState([])
-
-    useEffect(()=>{
-        fetchCommentsByArticleId(articleId)
-        .then(comments=>{
-            setCommentsInfo(comments)
-            setIsLoading(false)
-        })
-    },[additionToComments])
+    const { data:commentsInfo, isLoading, error } = UseLoadingHook(fetchCommentsByArticleId, articleId, additionToComments)
 
     return <>
+    {error?<h2>Error Please Refresh Page</h2>:
+    <>
     {isLoading? <h2>Loading...</h2>:
     <>
     <h2>{commentsInfo.length} comments</h2>
@@ -27,6 +21,7 @@ const CommentsList = ({articleId, additionToComments})=>{
             </li>
         })}
     </ol>
+    </>}
     </>}
     </>
 }
