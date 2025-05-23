@@ -1,6 +1,5 @@
 import UseLoadingHook from "../hooks/UseLoadingHook"
 import { fetchUsers } from "../utils/api"
-import PageIndex from "./PageIndex"
 import UserCard from "./UserCard"
 
 const UsersList = ()=>{
@@ -11,7 +10,6 @@ const UsersList = ()=>{
     <>
     {isLoading? <h2>Loading...</h2>:
     <>
-    <PageIndex/>
     <ol>
         {usersInfo.map(user=>{
             return <li key={user.username} className="listItem" >
