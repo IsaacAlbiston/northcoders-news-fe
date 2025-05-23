@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react"
 import NegativeVoteButton from "./NegativeVoteButton"
 import PositiveVoteButton from "./PositiveVoteButton"
-import { incVotesOnArticle } from "../utils/api"
 
-const ArticleVotes = ({articleId, votes})=>{
+const VoteButtons = ({incVotesFunction, itemId, votes})=>{
     const [voted, setVoted] = useState(false)
     const [voteInput, setVoteInput] = useState(0)
     const [error, setError] = useState(false)
@@ -11,7 +10,7 @@ const ArticleVotes = ({articleId, votes})=>{
     useEffect(()=>{
         if(voteInput===1){
             setVoted(true)
-            incVotesOnArticle(articleId,1)
+            incVotesFunction(itemId,1)
             .catch(err=>{
                 setVoted(false)
                 setError(true)
@@ -19,7 +18,7 @@ const ArticleVotes = ({articleId, votes})=>{
             })
         } else if (voteInput===-1){
             setVoted(true)
-            incVotesOnArticle(articleId,-1)
+            incVotesFunction(itemId,-1)
             .catch(err=>{
                 console.log(error)
                 setVoted(false)
@@ -32,7 +31,7 @@ const ArticleVotes = ({articleId, votes})=>{
     const cancelVote = ()=>{
         if(voteInput===1){
             setVoted(false)
-            incVotesOnArticle(articleId,-1)
+            incVotesFunction(itemId,-1)
             .then(()=>{
                 setVoteInput(0)
             })
@@ -42,7 +41,7 @@ const ArticleVotes = ({articleId, votes})=>{
             })
         } else if (voteInput===-1){
             setVoted(false)
-            incVotesOnArticle(articleId,1)
+            incVotesFunction(itemId,1)
             .then(()=>{
                 setVoteInput(0)
             })
@@ -67,4 +66,4 @@ const ArticleVotes = ({articleId, votes})=>{
     </>
 }
 
-export default ArticleVotes
+export default VoteButtons

@@ -50,6 +50,10 @@ export const incVotesOnArticle = (articleId, incValue)=>{
     return ncNewsApi.patch(`/articles/${articleId}`, {inc_votes:incValue})
 }
 
+export const incVotesOnComment = (commentId, incValue)=>{
+    return ncNewsApi.patch(`/comments/${commentId}`, {inc_votes:incValue})
+}
+
 export const postCommentOnArticle = (articleId, comment)=>{
     return ncNewsApi.post(`/articles/${articleId}/comments`,comment)
 }

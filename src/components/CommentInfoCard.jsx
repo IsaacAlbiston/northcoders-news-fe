@@ -1,6 +1,7 @@
 import { useContext, useState } from "react"
-import { removeCommentById } from "../utils/api"
+import { incVotesOnComment, removeCommentById } from "../utils/api"
 import { SessionContext } from "../contexts/SessionContext"
+import VoteButtons from "./VoteButtons"
 
 const CommentInfoCard = ({comment})=>{
     const {username} = useContext(SessionContext)
@@ -28,7 +29,7 @@ const CommentInfoCard = ({comment})=>{
     <h2>{comment.author}</h2>
     <p>{comment.body}</p>
     <p>{comment.created_at.slice(0,-14)}</p>
-    <p>{comment.votes} Votes</p>
+    <VoteButtons incVotesFunction={incVotesOnComment} itemId={comment.comment_id} votes={comment.votes}/>
     {error?<p>Delete Unsuccessful Please Retry</p>:<></>}
     {deleteInProgress?<p>Deleting...</p>:
     <>

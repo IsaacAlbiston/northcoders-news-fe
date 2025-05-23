@@ -1,4 +1,5 @@
-import ArticleVotes from "./ArticleVotes"
+import VoteButtons from "./VoteButtons"
+import { incVotesOnArticle } from "../utils/api"
 
 const FullArticleInfo = ({articleInfo, articleId})=>{
     return <div className="listItem">
@@ -7,7 +8,7 @@ const FullArticleInfo = ({articleInfo, articleId})=>{
     <p>{articleInfo.created_at.slice(0,-14)}</p>
     <p>{articleInfo.body}</p>
     <img src={articleInfo.article_img_url} alt={`Image about ${articleInfo.topic}`} className="articleImage" />
-    <ArticleVotes articleId={articleId} votes={articleInfo.votes} />
+    <VoteButtons incVotesFunction={incVotesOnArticle} itemId={articleId} votes={articleInfo.votes}/>
     </div>
 }
 
