@@ -10,12 +10,12 @@ const TopicLinks = ({topic:currentTopic})=>{
         <>
         {isLoading? <h2>Loading...</h2>:
         <>
-        {currentTopic?<Link to='/articles'><p className="link">All</p></Link>:
-        <p>All</p>}
+        {currentTopic?<Link to='/articles'>All</Link>:
+        <p className="unclickableLink">All</p>}
         {topics.map(topic=>{
             return <>
-            {currentTopic!==topic.slug?<Link to={`/articles/${topic.slug}`}><p className="link">{topic.slug}</p></Link>:
-            <p>{topic.slug}</p>}
+            {currentTopic!==topic.slug?<Link to={`/articles/${topic.slug}`}>{topic.slug}</Link>:
+            <p className="unclickableLink">{topic.slug}</p>}
             </>
         })}
         </>}
