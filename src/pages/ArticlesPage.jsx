@@ -9,13 +9,13 @@ import UseLoadingHook from "../hooks/UseLoadingHook"
 const ArticlesPage = ()=>{
     const [articleSort, setArticleSort] = useState({sort_by:"votes"})
     const [articlesSearchTerm, setArticlesSearchTerm] = useState({})
-    const {topic} = useParams()
+    const {topic, pageNumber} = useParams()
 
     const { data:articlesInfo, isLoading, error } = UseLoadingHook(fetchArticles, articlesSearchTerm)
 
     useEffect(()=>{
-        setArticlesSearchTerm({limit:1000, topic:topic, ...articleSort})
-    },[topic, articleSort])
+        setArticlesSearchTerm({limit:10, p:pageNumber, topic:topic, ...articleSort})
+    },[topic, articleSort, pageNumber])
 
     return <>
     <PageTitle title={ "Articles" } />
@@ -23,7 +23,7 @@ const ArticlesPage = ()=>{
     {error?<PageTitle title={ "Topic Not Found" } />:
     <>
     {isLoading? <h2>Loading...</h2>:
-    <SearchResults articlesInfo={articlesInfo} />}
+    <SearchResults articlesInfo={articlesInfo}/>}
     </>
     }
     </>

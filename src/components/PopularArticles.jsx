@@ -12,7 +12,7 @@ const PopularArticles = ()=>{
         .then(topics=>{
             topics.forEach(({slug})=>{
                 fetchArticles({limit:1, topic:slug, sort_by: "votes"})
-                .then(articles=>{
+                .then(({articles})=>{
                     setPopArticlesInfo(current=>{
                         const copyCurrent = {...current}
                         copyCurrent[slug] = articles[0]

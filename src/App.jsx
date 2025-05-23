@@ -18,8 +18,8 @@ function App() {
       <NavBar/>
       <Routes>
         <Route path='/' element={<HomePage/>} />
-        <Route path='/articles/:topic?' element= {<ArticlesPage/>} />
-        <Route path='/article/:articleId' element= {<ArticlePage/>} />
+        <Route path='/articles/:pageNumber/:topic?' element= {<ArticlesPage/>} />
+        <Route path='/article/:articleId/:pageNumber' element= {<ArticlePage/>} />
         <Route path='/users' element={<UsersPage/>} />
         <Route path='/users/:usernameParam' element={<AccountPage/>} />
         <Route path={'*'} element= {<BadPathPage/>} />

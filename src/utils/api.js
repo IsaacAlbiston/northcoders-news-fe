@@ -28,7 +28,7 @@ export const fetchTopics = ()=>{
 export const fetchArticles = (givenParams)=>{
     return ncNewsApi.get("/articles", {params:{...givenParams}})
     .then(res=>{
-        return res.data.articles
+        return res.data
     })
 }
 
@@ -39,10 +39,10 @@ export const fetchArticleById = (articleId)=>{
     })
 }
 
-export const fetchCommentsByArticleId = (articleId)=>{
-    return ncNewsApi.get(`/articles/${articleId}/comments`, {params:{limit:1000}})
+export const fetchCommentsByArticleId = ({articleId, p, limit})=>{
+    return ncNewsApi.get(`/articles/${articleId}/comments`, {params:{p,limit}})
     .then(res=>{
-        return res.data.comments
+        return res.data
     })
 }
 

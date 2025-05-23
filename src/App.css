@@ -69,6 +69,13 @@ button{
   margin-block-end: 0px;
 }
 
+.PageIndex{
+  width: 90%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  align-items: center;
+}
+
 #CommentInput{
   width: 80%;
   max-width: 80%;
