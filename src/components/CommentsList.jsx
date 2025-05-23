@@ -6,14 +6,14 @@ import UseLoadingHook from "../hooks/UseLoadingHook"
 import { useParams } from "react-router"
 
 const CommentsList = ({articleId, additionToComments})=>{
-    const [commentsSearchTerm, setCommentsSearchTerm] = useState({})
+    const [commentsSearchTerm, setCommentsSearchTerm] = useState({limit:10, p:1, articleId:articleId})
     const {pageNumber} = useParams()
     const { data:commentsInfo, isLoading, error } = UseLoadingHook(fetchCommentsByArticleId, commentsSearchTerm, additionToComments)
-
+    
     useEffect(()=>{
         setCommentsSearchTerm({limit:10, p:pageNumber, articleId:articleId})
     },[pageNumber])
-
+    
     return <>
     {error?<h2>Error Please Refresh Page</h2>:
     <>
