@@ -60,10 +60,10 @@ const ArticleVotes = ({articleId, votes})=>{
     <p>{voteInput} Vote Accepted</p>
     <button onClick={cancelVote}>Cancel Vote</button>
     </>
-    :<>
+    :<div>
     <PositiveVoteButton setVoteInput={setVoteInput} />
     <NegativeVoteButton setVoteInput={setVoteInput} />
-    </>}
+    </div>}
     </>
 }
 

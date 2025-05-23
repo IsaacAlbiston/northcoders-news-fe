@@ -5,7 +5,7 @@ const CommentInput = ({inputComment, setInputComment})=>{
 
     return <>
     <label htmlFor="CommentInput">New Comment</label>
-    <textarea className="CommentInput" onChange={updateInputComment} value={inputComment}/>
+    <textarea id="CommentInput" onChange={updateInputComment} value={inputComment}/>
     </>
 }
 
